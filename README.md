@@ -1,2 +1,2 @@
 # TLSProxy
-contains files for application gateway L4 deployments
+Contains files for application gateway deployments (includes L4 properties)
