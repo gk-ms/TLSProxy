@@ -1,0 +1,308 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/applicationGateways",
+            "apiVersion": "2021-08-01",
+            "name": "test-gw",
+            "location": "eastus2euap",
+            "dependsOn": [],
+            "tags": {
+            },
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "9afa68d9-3185-42a7-ab4d-f50b92bdc0f8",
+                "sku": {
+                    "name": "Standard_v2",
+                    "tier": "Standard_v2"
+                },
+                "operationalState": "Running",
+                "gatewayIPConfigurations": [
+                    {
+                        "name": "appGatewayIpConfig",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/gatewayIPConfigurations/appGatewayIpConfig",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "subnet": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/virtualNetworks/zhenhua-vnet/subnets/subnet-zhenhua"
+                            }
+                        },
+                        "type": "Microsoft.Network/applicationGateways/gatewayIPConfigurations"
+                    }
+                ],
+                "sslCertificates": [],
+                "trustedRootCertificates": [],
+                "trustedClientCertificates": [],
+                "sslProfiles": [],
+                "frontendIPConfigurations": [
+                    {
+                        "name": "appGwPublicFrontendIp",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/frontendIPConfigurations/appGwPublicFrontendIp",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "type": "Microsoft.Network/applicationGateways/frontendIPConfigurations",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "name": "acctest-pubip-zhenhua-standard",
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/publicIPAddresses/acctest-pubip-zhenhua-standard",
+                                "etag": "W/\"0a584c74-377f-4a6a-afa8-62017418693d\"",
+                                "location": "eastus2euap",
+                                "tags": {},
+                                "zones": [
+                                    "1",
+                                    "2",
+                                    "3"
+                                ],
+                                "properties": {
+                                    "provisioningState": "Succeeded",
+                                    "resourceGuid": "40268dae-538b-404a-add5-0e97a2f4c41c",
+                                    "ipAddress": "20.39.26.83",
+                                    "publicIPAddressVersion": "IPv4",
+                                    "publicIPAllocationMethod": "Static",
+                                    "idleTimeoutInMinutes": 4,
+                                    "ipTags": [],
+                                    "ipConfiguration": {
+                                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/frontendIPConfigurations/appGwPublicFrontendIp"
+                                    }
+                                },
+                                "type": "Microsoft.Network/publicIPAddresses",
+                                "sku": {
+                                    "name": "Standard",
+                                    "tier": "Regional"
+                                }
+                            },
+                            "httpListeners": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/httpListeners/httplistener"
+                                }
+                            ],
+                            "listeners": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/listeners/tcplistener"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "frontendPorts": [
+                    {
+                        "name": "port_80",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/frontendPorts/port_80",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "port": 80,
+                            "httpListeners": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/httpListeners/httplistener"
+                                }
+                            ]
+                        },
+                        "type": "Microsoft.Network/applicationGateways/frontendPorts"
+                    },
+                    {
+                        "name": "port_81",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/frontendPorts/port_81",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "port": 81,
+                            "listeners": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/listeners/tcplistener"
+                                }
+                            ]
+                        },
+                        "type": "Microsoft.Network/applicationGateways/frontendPorts"
+                    }
+                ],
+                "backendAddressPools": [
+                    {
+                        "name": "backend",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/backendAddressPools/backend",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "backendAddresses": [
+                                {
+                                    "fqdn": "printrequest.parkuma.com"
+                                }
+                            ],
+                            "requestRoutingRules": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/requestRoutingRules/requestroutingrule"
+                                }
+                            ],
+                            "routingRules": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/routingRules/routingrule"
+                                }
+                            ]
+                        },
+                        "type": "Microsoft.Network/applicationGateways/backendAddressPools"
+                    },
+                    {
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/backendAddressPools/dummybckend",
+                        "name": "dummybckend",
+                        "properties": {
+                            "backendAddresses": [
+                                {
+                                    "ipAddress": null,
+                                    "fqdn": "appgwcanarybackend-westus.azurewebsites.net"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "loadDistributionPolicies": [],
+                "backendHttpSettingsCollection": [
+                    {
+                        "name": "httpsetting",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/backendHttpSettingsCollection/httpsetting",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "port": 80,
+                            "protocol": "Http",
+                            "cookieBasedAffinity": "Disabled",
+                            "pickHostNameFromBackendAddress": true,
+                            "requestTimeout": 30,
+                            "requestRoutingRules": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/requestRoutingRules/requestroutingrule"
+                                }
+                            ]
+                        },
+                        "type": "Microsoft.Network/applicationGateways/backendHttpSettingsCollection"
+                    }
+                ],
+                "backendSettingsCollection": [
+                    {
+                        "name": "tcpsetting",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/backendSettingsCollection/tcpsetting",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "port": 80,
+                            "protocol": "Tcp",
+                            "timeout": 20,
+                            "routingRules": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/routingRules/routingrule"
+                                }
+                            ]
+                        },
+                        "type": "Microsoft.Network/applicationGateways/backendSettingsCollection"
+                    }
+                ],
+                "httpListeners": [
+                    {
+                        "name": "httplistener",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/httpListeners/httplistener",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/frontendIPConfigurations/appGwPublicFrontendIp"
+                            },
+                            "frontendPort": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/frontendPorts/port_80"
+                            },
+                            "protocol": "Http",
+                            "hostNames": [],
+                            "requireServerNameIndication": false,
+                            "requestRoutingRules": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/requestRoutingRules/requestroutingrule"
+                                }
+                            ]
+                        },
+                        "type": "Microsoft.Network/applicationGateways/httpListeners"
+                    }
+                ],
+                "listeners": [
+                    {
+                        "name": "tcplistener",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/listeners/tcplistener",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/frontendIPConfigurations/appGwPublicFrontendIp"
+                            },
+                            "frontendPort": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/frontendPorts/port_81"
+                            },
+                            "protocol": "Tcp",
+                            "routingRules": [
+                                {
+                                    "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/routingRules/routingrule"
+                                }
+                            ]
+                        },
+                        "type": "Microsoft.Network/applicationGateways/listeners"
+                    }
+                ],
+                "urlPathMaps": [],
+                "requestRoutingRules": [
+                    {
+                        "name": "requestroutingrule",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/requestRoutingRules/requestroutingrule",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "ruleType": "Basic",
+                            "priority": 10010,
+                            "httpListener": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/httpListeners/httplistener"
+                            },
+                            "backendAddressPool": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/backendAddressPools/backend"
+                            },
+                            "backendHttpSettings": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/backendHttpSettingsCollection/httpsetting"
+                            }
+                        },
+                        "type": "Microsoft.Network/applicationGateways/requestRoutingRules"
+                    }
+                ],
+                "routingRules": [
+                    {
+                        "name": "routingrule",
+                        "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/routingRules/routingrule",
+                        "etag": "W/\"cece4421-0b89-4d98-80f6-de2cd0aa1dc6\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "ruleType": "Basic",
+                            "listener": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/listeners/tcplistener"
+                            },
+                            "backendAddressPool": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/backendAddressPools/backend"
+                            },
+                            "backendSettings": {
+                                "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw/backendSettingsCollection/tcpsetting"
+                            }
+                        },
+                        "type": "Microsoft.Network/applicationGateways/routingRules"
+                    }
+                ],
+                "probes": [],
+                "rewriteRuleSets": [],
+                "redirectConfigurations": [],
+                "privateLinkConfigurations": [],
+                "privateEndpointConnections": [],
+                "enableHttp2": false,
+                "autoscaleConfiguration": {
+                    "minCapacity": 2,
+                    "maxCapacity": 10
+                }
+            },
+            "id": "/subscriptions/84c868a2-9a5e-4e5d-95d7-d44b266f6b8a/resourceGroups/zhenhuaRG/providers/Microsoft.Network/applicationGateways/test-gw"
+        }
+    ]
+}
